@@ -1,0 +1,3 @@
+<launch>
+	<node name="nmc_nlp_lite_server" pkg="nmc_nlp_lite" type="nmc_nlp_lite_server.py" />
+</launch>
