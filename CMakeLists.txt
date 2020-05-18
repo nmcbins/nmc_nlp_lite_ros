@@ -161,6 +161,7 @@ include_directories(
  catkin_install_python(PROGRAMS
 #   scripts/my_python_script
    nmc_nlp_lite_server.py
+   tests/nmc_nlp_lite_test.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
