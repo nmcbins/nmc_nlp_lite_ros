@@ -4,26 +4,29 @@
 import rospy #for talker & listner 
 from std_msgs.msg import String #for talker & listner 
 from nmc_nlp_lite.srv import nmcNLP,nmcNLPResponse
+from nmc_nlp_lite.msg import nmcNLPMsg
 import nmc_bins as nmcbins
 
-pub = rospy.Publisher('nmc_nlp_out', String, queue_size=10)
+pub = rospy.Publisher('nmc_nlp_out', nmcNLPMsg, queue_size=10)
 
-def callback_for_subscriber(data):
-	rospy.loginfo(rospy.get_caller_id() + "  nmc_nlp server received: %s", data.data)
-	#nmcbins.setQid(req.binsClientQid)
-	b=nmcbins.normalize(data.data)
-	rospy.loginfo(b)
-	msg = rospy.get_caller_id() + "  relay relay relay" + data.data
-	pub.publish(msg)
+def callback_for_subscriber(bins_input):
+	msg = rospy.get_caller_id() + "  relay relay relay" + bins_input.binsSentence
+	rospy.loginfo(msg)
+	nmcbins.setQid(bins_input.binsClientQid)
+	bins_response=nmcbins.normalize(bins_input.binsSentence)
+	bins_output = nmcNLPMsg()
+	bins_output.binsClientQid= bins_input.binsClientQid
+	bins_output.binsSentence= bins_response
+	pub.publish(bins_output)
 
 def callback_for_service(req):
 	nmcbins.setQid(req.binsClientQid)
-	b=nmcbins.normalize(req.binsInputSentence)
-	return nmcNLPResponse("bins_input:"+req.binsInputSentence + "\n bins_output:" + b)
+	bins_response=nmcbins.normalize(req.binsInputSentence)
+	return nmcNLPResponse("bins_input:"+req.binsInputSentence + "\n bins_output:" + bins_response)
 
 def listener():
     rospy.init_node('nmc_nlp', anonymous=True)  # 'nmc_nlp' as node name is overwritten by the name specified in nmc_nlp_lite.launch file.	
-    rospy.Subscriber("nmc_nlp_in", String, callback_for_subscriber)
+    rospy.Subscriber("nmc_nlp_in", nmcNLPMsg, callback_for_subscriber)
     rospy.Service("nmc_nlp_service",nmcNLP, callback_for_service)
     rospy.spin()
 

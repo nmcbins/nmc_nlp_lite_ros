@@ -1,0 +1,2 @@
+string binsClientQid
+string binsSentence

@@ -25,5 +25,4 @@ def normalize(text_to_process):
 		s += "Error connecting to bins server!"
 	else:
 		s=nodejs_response.text  #.text: utf-8,  .content:  raw bytes.
-
 	return s

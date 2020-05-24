@@ -47,11 +47,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+	FILES
+	nmcNLPMsg.msg
+ )
 
 ## Generate services in the 'srv' folder
  add_service_files(
@@ -161,6 +160,10 @@ include_directories(
  catkin_install_python(PROGRAMS
 #   scripts/my_python_script
    nmc_nlp_lite_server.py
+   nmc_bins.py
+   nmc_nlp_lite_client_example.py
+   nmc_nlp_lite_client2_example_pub.py
+   nmc_nlp_lite_client2_example_sub.py
    tests/nmc_nlp_lite_test.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )

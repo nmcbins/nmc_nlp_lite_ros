@@ -50,12 +50,10 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
 	<build_depend>rospy</build_depend>
-	<build_depend>nmcbins</build_depend>
 	<build_depend>message_generation</build_depend>
 	<build_depend>unittest</build_depend>
 	<exec_depend>rospy</exec_depend>
 	<exec_depend>message_runtime</exec_depend>
-	<exec_depend>nmcbins</exec_depend>
 	<test_depend>unittest</test_depend>
   <!-- The export tag contains other, unspecified, tags -->
   <export>

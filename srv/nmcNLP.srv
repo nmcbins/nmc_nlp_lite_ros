@@ -1,4 +1,4 @@
-string binsInputSentence
 string binsClientQid
+string binsInputSentence
 ---
 string binsOutput
