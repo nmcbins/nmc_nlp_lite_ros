@@ -5,12 +5,12 @@ import rospy
 from nmc_nlp_lite.srv import *
 import time
 nmcNLPService = rospy.ServiceProxy('nmc_nlp_service', nmcNLP)
+binsClientQid = "p7INVIHYDQM"
 
 def call_nmcNLPService(inputString):
     rospy.wait_for_service('nmc_nlp_service')
     try:
-        #req = nmc_nlp_lite.srv.nmcNLP(inputString)
-        nmcRequest =nmcNLPRequest(inputString)
+        nmcRequest =nmcNLPRequest(inputString,binsClientQid)
         nmcResponse = nmcNLPService(nmcRequest)
         return nmcResponse.binsOutput
     except rospy.ServiceException, e:
