@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
-#2020.5.13 this is the nmc_nlp_lite ROS package main file.
+#2020.5.13 This is the nmc_nlp_lite ROS package main file.
+#2020.5.13 Its main function: a ROS node that accesses a cloud-based light-weight natural language normalization service, which is hosted at www.nmcomputing.com
+#  AS a ROS node it can be accessed through a service call, or through publish/subscribe mode.
+
 import rospy #for talker & listner 
-from std_msgs.msg import String #for talker & listner 
 from nmc_nlp_lite.srv import nmcNLP,nmcNLPResponse
 from nmc_nlp_lite.msg import nmcNLPMsg
 import nmc_bins as nmcbins
