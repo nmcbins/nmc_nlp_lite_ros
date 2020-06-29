@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+# Copyright (c) 2020 NMC Corp
+# This code is licensed under MIT license (see LICENSE.md for details)
 #2020.5.13 This is the nmc_nlp_lite ROS package main file.
 #2020.5.13 Its main function: a ROS node that accesses a cloud-based light-weight natural language normalization service, which is hosted at www.nmcomputing.com
 #  AS a ROS node it can be accessed through a service call, or through publish/subscribe mode.

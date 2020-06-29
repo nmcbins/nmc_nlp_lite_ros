@@ -1,4 +1,6 @@
 # 2020.3.24 LN Client will use this python module on their web server to access NMC Language Normalization Service.
+# Copyright (c) 2020 NMC Corp
+# This code is licensed under MIT license (see LICENSE.md for details)
 import requests
 import json
 nmc_ln_host_session = None

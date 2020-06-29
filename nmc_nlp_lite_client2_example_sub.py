@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+# Copyright (c) 2020 NMC Corp
+# This code is licensed under MIT license (see LICENSE.md for details)
 #Example code nmc_nlp_lite_client2_example_sub.py:  
 # For asynchronous use of ROS node "nmc_nlp_lite", use this subscriber to receive processing result.
 
