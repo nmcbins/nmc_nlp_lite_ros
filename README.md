@@ -12,3 +12,12 @@ BINS supports definitions of synonyms, phrases (i.e. ngram), and RegEx word patt
 Upon matching of a pre-defined pattern, BINS lets a developer specify what to produce as output -- which could be plain text, or robot executable instructions, or even intents, entities, etc. in json format.
 
 nmc_nlp_lite, as a wrapper of BINS, can be launched as a ROS node that supports both publish/subscribe mode (for asynchronous access) or service mode (for synchronous access).
+
+Authors:
+
+JJ Cao：Neuronmap Computing Corp.
+
+Xiaofeng Shao：Tsinghua University
+
+Shengjin Wang：Tsinghua University
+
